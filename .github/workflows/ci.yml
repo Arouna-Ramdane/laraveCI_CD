@@ -13,4 +13,4 @@ jobs:
       #  run : cd app && composer i && cp .env.example .env && php artisan key:gen && php artidan test
 
       - name: build
-        run: docker build -t arounaramdane/laravelci:latest
+        run: docker build -t arounaramdane/laravelci:latest .
