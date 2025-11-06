@@ -18,5 +18,8 @@ jobs:
       - name: login docker hub
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.AROUNARAMDANE_USERNAME }}
+          Username: ${{ secrets.AROUNARAMDANE_USERNAME }}
           password: ${{ secrets.AROUNARAMDANE_TOKEN }}
+
+      - name: push
+        run: docker push arounaramdane/laravelci:latest
