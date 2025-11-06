@@ -9,8 +9,14 @@ jobs:
       - name: Récupérer le code source
         uses: actions/checkout@v5
 
-      #- name: Run test
-      #  run : cd app && composer i && cp .env.example .env && php artisan key:gen && php artidan test
+      - name: Run test
+        run : cd app && composer i && cp .env.example .env && php artisan key:gen && php artisan test
 
       - name: build
         run: docker build -t arounaramdane/laravelci:latest .
+
+      - name: login docker hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.AROUNARAMDANE_USERNAME }}
+          password: ${{ secrets.AROUNARAMDANE_TOKEN }}
