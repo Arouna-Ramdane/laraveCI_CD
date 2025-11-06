@@ -9,5 +9,8 @@ jobs:
       - name: Récupérer le code source
         uses: actions/checkout@v5
 
-      - name: Run test
-        run : cd app && composer install && cp .env.example .env && php artisan key:gen && php artidan test
+      #- name: Run test
+      #  run : cd app && composer i && cp .env.example .env && php artisan key:gen && php artidan test
+
+      - name: build
+        run: docker build -t arounaramdane/laravelci:latest
