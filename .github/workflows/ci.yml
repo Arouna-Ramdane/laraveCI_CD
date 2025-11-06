@@ -8,3 +8,6 @@ jobs:
     steps:
       - name: Récupérer le code source
         uses: actions/checkout@v5
+
+      - name: Run test
+        run : cd app && composer install && cp .env.exemple .env && php artisan key:gen && php artidan test
